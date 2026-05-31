@@ -1,0 +1,6 @@
+{
+  "name": "O Livro dos Cem Drinks",
+  "description": "A luxuosa landing page de vendas do e-book oficial 'O Livro dos Cem Drinks' por Augusto Valverde, contendo 101 receitas clássicas da coquetelaria mundial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
