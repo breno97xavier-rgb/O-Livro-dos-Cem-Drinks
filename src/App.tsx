@@ -85,7 +85,7 @@ export default function App() {
       <div className="absolute bottom-[30%] left-5 w-[600px] h-[600px] bg-vinho/5 rounded-full blur-[180px] pointer-events-none" />
       
       {/* HEADER / FLYING NAVIGATION BAR (Sleek minimalist bar) */}
-      <header className="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-gold/15 px-3 py-3.5 sm:px-4 sm:py-4" id="premium-header">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-gold/15 px-3 py-3.5 sm:px-4 sm:py-4" id="premium-header">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-1.5 sm:gap-2.5">
             <span className="text-lg sm:text-xl font-serif-display text-gold tracking-widest font-semibold shrink-0">AV</span>
@@ -105,7 +105,7 @@ export default function App() {
 
           <div className="shrink-0">
             <a
-              href="#LINK-CHECKOUT"
+              href="https://pay.kiwify.com.br/ZsUxlYU"
               onClick={openCheckout}
               className="px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-[9px] sm:text-[10px] font-bold tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.03] active:scale-95 inline-flex items-center justify-center"
               id="cta-mini-nav"
@@ -117,7 +117,7 @@ export default function App() {
       </header>
 
       {/* 1. HERO SECTION (Títulos + Métricas + CTA + Mockup) */}
-      <section className="relative pt-12 pb-20 md:py-28 px-4 border-b border-gold/10" id="hero-section">
+      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 border-b border-gold/10" id="hero-section">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Text Column */}
@@ -158,7 +158,7 @@ export default function App() {
             {/* Call to Actions */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
               <a
-                href="#LINK-CHECKOUT"
+                href="https://pay.kiwify.com.br/ZsUxlYU"
                 onClick={openCheckout}
                 className="w-full sm:w-auto px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.45)] hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2 text-center"
                 id="cta-hero-primary"
@@ -578,7 +578,7 @@ export default function App() {
 
               {/* Secure checkout button action */}
               <a
-                href="#LINK-CHECKOUT"
+                href="https://pay.kiwify.com.br/ZsUxlYU"
                 onClick={openCheckout}
                 className="w-full px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.5)] hover:scale-[1.01] text-center flex items-center justify-center gap-2"
                 id="btn-checkout-offer"
@@ -748,20 +748,21 @@ export default function App() {
 
                   <div className="bg-black/60 border border-gold/15 p-4 rounded text-left mb-6">
                     <span className="text-[9px] text-gold uppercase tracking-wider block font-semibold mb-1">Produto Selecionado</span>
-                    <span className="text-sm text-marfim font-serif-display font-bold">O Livro dos Cem Drinks + Bônus</span>
+                    <span className="text-sm text-marfim font-serif-display font-bold">O Livro dos Cem Drinks</span>
                     <div className="flex justify-between items-center mt-3 pt-3 border-t border-gold/10 text-xs font-mono">
                       <span className="text-marfim/50">Total Seguro:</span>
                       <span className="text-gold-light font-bold">R$ 47,00 à vista</span>
                     </div>
                   </div>
 
-                  <button
-                    onClick={handleSimulatePayment}
-                    className="w-full px-6 py-3.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-xs font-bold tracking-widest rounded transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] cursor-pointer"
+                  <a
+                    href="https://pay.kiwify.com.br/ZsUxlYU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center px-6 py-3.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-xs font-bold tracking-widest rounded transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] cursor-pointer"
                   >
-                    Simular Pagamento Seguro
-                  </button>
-                  <p className="text-[10px] text-marfim/45 mt-3 font-mono">Simulador de ambiente de desenvolvimento seguro</p>
+                    Pagamento Seguro
+                  </a>
                 </div>
               )}
 
