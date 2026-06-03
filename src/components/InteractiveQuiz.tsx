@@ -489,7 +489,7 @@ export default function InteractiveQuiz({ onAdquirir }: InteractiveQuizProps) {
                 </button>
 
                 <a
-                  href="https://pay.kiwify.com.br/ZsUxlYU"
+                  href="https://pay.wiapy.com/5nFt5iAoDz"
                   onClick={onAdquirir}
                   className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-vinho to-vinho-light hover:from-vinho-light hover:to-gradient-to-r text-marfim-light border border-gold/30 hover:border-gold/60 font-sans-alt text-xs font-semibold uppercase tracking-wider rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(122,36,38,0.4)] text-center cursor-pointer"
                   id="btn-adquirir-via-quiz"

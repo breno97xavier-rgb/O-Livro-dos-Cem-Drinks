@@ -24,6 +24,8 @@ import { chapters, benefits, faqItems, sampleRecipes } from "./data";
 import Ornamento from "./components/Ornamento";
 import InteractiveQuiz from "./components/InteractiveQuiz";
 import HostCalculator from "./components/HostCalculator";
+import BookPreview from "./components/BookPreview";
+import AcquaintanceTestimonials from "./components/AcquaintanceTestimonials";
 // Author and book assets
 const authorPhotoUrl = "https://i.ibb.co/Vp954Q1F/Chat-GPT-Image-31-de-mai-de-2026-00-18-06.png";
 const bookMockupUrl = "https://i.ibb.co/ksRcgH89/C-pia-de-Design-sem-nome.png";
@@ -96,16 +98,17 @@ export default function App() {
             </span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-xs font-sans-alt uppercase tracking-[0.2em] text-marfim/70">
+          <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-xs font-sans-alt uppercase tracking-[0.2em] text-marfim/70">
             <a href="#promessa" className="hover:text-gold transition-colors duration-300">A Obra</a>
             <a href="#capitulos" className="hover:text-gold transition-colors duration-300">Sumário</a>
+            <a href="#amostras-por-dentro" className="hover:text-gold transition-colors duration-300">Amostras</a>
             <a href="#beneficios" className="hover:text-gold transition-colors duration-300">Conteúdo</a>
             <a href="#autor" className="hover:text-gold transition-colors duration-300">O Historiador</a>
           </nav>
 
           <div className="shrink-0">
             <a
-              href="https://pay.kiwify.com.br/ZsUxlYU"
+              href="https://pay.wiapy.com/5nFt5iAoDz"
               onClick={openCheckout}
               className="px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-[9px] sm:text-[10px] font-bold tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.03] active:scale-95 inline-flex items-center justify-center"
               id="cta-mini-nav"
@@ -158,7 +161,7 @@ export default function App() {
             {/* Call to Actions */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
               <a
-                href="https://pay.kiwify.com.br/ZsUxlYU"
+                href="https://pay.wiapy.com/5nFt5iAoDz"
                 onClick={openCheckout}
                 className="w-full sm:w-auto px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.45)] hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2 text-center"
                 id="cta-hero-primary"
@@ -375,6 +378,9 @@ export default function App() {
         </div>
       </section>
 
+      {/* SAMPLE PAGES INSIDE THE BOOK */}
+      <BookPreview onAdquirir={openCheckout} />
+
       {/* 5. BENEFÍCIOS SECTION (O que torna o livro especial - 6 cards) */}
       <section className="py-20 md:py-28 px-4 border-t border-gold/10 relative" id="beneficios">
         <div className="max-w-7xl mx-auto">
@@ -578,7 +584,7 @@ export default function App() {
 
               {/* Secure checkout button action */}
               <a
-                href="https://pay.kiwify.com.br/ZsUxlYU"
+                href="https://pay.wiapy.com/5nFt5iAoDz"
                 onClick={openCheckout}
                 className="w-full px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.5)] hover:scale-[1.01] text-center flex items-center justify-center gap-2"
                 id="btn-checkout-offer"
@@ -613,6 +619,9 @@ export default function App() {
 
         </div>
       </section>
+
+      {/* ACQUAINTANCE TESTIMONIALS (Pró-sociais de amigos e mentores da jornada de Augusto) */}
+      <AcquaintanceTestimonials />
 
       {/* 8. FAQ SECTION (Acordeão de Perguntas com details nativos aprimorados) */}
       <section className="py-20 md:py-28 px-4 border-t border-gold/10 bg-[#141414]/15" id="faq">
@@ -756,7 +765,7 @@ export default function App() {
                   </div>
 
                   <a
-                    href="https://pay.kiwify.com.br/ZsUxlYU"
+                    href="https://pay.wiapy.com/5nFt5iAoDz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full block text-center px-6 py-3.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-xs font-bold tracking-widest rounded transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] cursor-pointer"
