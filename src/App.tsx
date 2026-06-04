@@ -41,6 +41,18 @@ export default function App() {
   const [showCheckoutSimulator, setShowCheckoutSimulator] = useState<boolean>(false);
   const [checkoutStatus, setCheckoutStatus] = useState<string>("init"); // init, success
 
+  // Dynamic checkout link with web search query redirection param passing
+  const [checkoutUrl, setCheckoutUrl] = useState("https://pay.wiapy.com/5nFt5iAoDz");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const search = window.location.search;
+      if (search) {
+        setCheckoutUrl(`https://pay.wiapy.com/5nFt5iAoDz${search}`);
+      }
+    }
+  }, []);
+
   // Real-time limited offer countdown state
   const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 14, seconds: 45 });
 
@@ -108,7 +120,7 @@ export default function App() {
 
           <div className="shrink-0">
             <a
-              href="https://pay.wiapy.com/5nFt5iAoDz"
+              href={checkoutUrl}
               onClick={openCheckout}
               className="px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-[9px] sm:text-[10px] font-bold tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.03] active:scale-95 inline-flex items-center justify-center"
               id="cta-mini-nav"
@@ -161,7 +173,7 @@ export default function App() {
             {/* Call to Actions */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
               <a
-                href="https://pay.wiapy.com/5nFt5iAoDz"
+                href={checkoutUrl}
                 onClick={openCheckout}
                 className="w-full sm:w-auto px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.45)] hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2 text-center"
                 id="cta-hero-primary"
@@ -584,7 +596,7 @@ export default function App() {
 
               {/* Secure checkout button action */}
               <a
-                href="https://pay.wiapy.com/5nFt5iAoDz"
+                href={checkoutUrl}
                 onClick={openCheckout}
                 className="w-full px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.5)] hover:scale-[1.01] text-center flex items-center justify-center gap-2"
                 id="btn-checkout-offer"
@@ -765,7 +777,7 @@ export default function App() {
                   </div>
 
                   <a
-                    href="https://pay.wiapy.com/5nFt5iAoDz"
+                    href={checkoutUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full block text-center px-6 py-3.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-xs font-bold tracking-widest rounded transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] cursor-pointer"

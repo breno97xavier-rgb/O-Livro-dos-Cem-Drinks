@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight, Eye, BookOpen, Layers, Maximize2, X, Sparkles } from "lucide-react";
 import Ornamento from "./Ornamento";
@@ -68,6 +68,16 @@ interface BookPreviewProps {
 export default function BookPreview({ onAdquirir }: BookPreviewProps) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
+  const [checkoutUrl, setCheckoutUrl] = useState("https://pay.wiapy.com/5nFt5iAoDz");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const search = window.location.search;
+      if (search) {
+        setCheckoutUrl(`https://pay.wiapy.com/5nFt5iAoDz${search}`);
+      }
+    }
+  }, []);
 
   const activeSample = samples[currentIndex];
 
@@ -191,7 +201,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
             {/* Quick action beneath */}
             <div className="mt-6 text-center lg:text-left flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <a
-                href="https://pay.wiapy.com/5nFt5iAoDz"
+                href={checkoutUrl}
                 onClick={onAdquirir}
                 className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-gold-dark to-gold text-black font-sans-alt text-[10px] font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.01] inline-flex items-center justify-center gap-1.5"
               >
@@ -334,7 +344,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
                 Esta amostra ilustra o requinte editorial planejado em formato PDF de página dupla. Ideal para telas horizontais, tablets ou impressão de luxo.
               </p>
               <a
-                href="https://pay.wiapy.com/5nFt5iAoDz"
+                href={checkoutUrl}
                 onClick={(e) => {
                   setIsLightboxOpen(false);
                   if (onAdquirir) onAdquirir(e);

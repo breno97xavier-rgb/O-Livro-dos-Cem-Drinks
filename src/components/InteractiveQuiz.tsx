@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { GlassWater, Flame, Compass, HelpCircle, Check, RotateCcw, ArrowRight } from "lucide-react";
 import Ornamento from "./Ornamento";
@@ -178,6 +178,16 @@ export default function InteractiveQuiz({ onAdquirir }: InteractiveQuizProps) {
   const [currentStep, setCurrentStep] = useState<number>(0); // 0 = intro, 1,2,3 = questions, 4 = result
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState<boolean>(false);
+  const [checkoutUrl, setCheckoutUrl] = useState("https://pay.wiapy.com/5nFt5iAoDz");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const search = window.location.search;
+      if (search) {
+        setCheckoutUrl(`https://pay.wiapy.com/5nFt5iAoDz${search}`);
+      }
+    }
+  }, []);
 
   const startQuiz = () => {
     setAnswers({});
@@ -489,7 +499,7 @@ export default function InteractiveQuiz({ onAdquirir }: InteractiveQuizProps) {
                 </button>
 
                 <a
-                  href="https://pay.wiapy.com/5nFt5iAoDz"
+                  href={checkoutUrl}
                   onClick={onAdquirir}
                   className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-vinho to-vinho-light hover:from-vinho-light hover:to-gradient-to-r text-marfim-light border border-gold/30 hover:border-gold/60 font-sans-alt text-xs font-semibold uppercase tracking-wider rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(122,36,38,0.4)] text-center cursor-pointer"
                   id="btn-adquirir-via-quiz"
