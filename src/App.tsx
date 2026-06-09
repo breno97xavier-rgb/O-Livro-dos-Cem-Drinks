@@ -131,8 +131,60 @@ export default function App() {
         </div>
       </header>
 
-      {/* 1. HERO SECTION (Títulos + Métricas + CTA + Mockup) */}
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 border-b border-gold/10" id="hero-section">
+      {/* 1. CURADORIA INTERATIVA (Quiz de descoberta da persona do anúncio) */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 border-b border-gold/10 bg-gradient-to-b from-[#0A0A0A] to-[#141414]" id="quiz-section">
+        <div className="max-w-7xl mx-auto">
+          <InteractiveQuiz onAdquirir={openCheckout} />
+        </div>
+      </section>
+
+      {/* 2. TÉCNICA & PRÁTICA PARA O ANFITRIÃO (Calculadora Inteligente) */}
+      <section className="py-20 md:py-24 px-4 bg-[#0A0A0A] border-b border-gold/10" id="calculadora-anfitriao">
+        <div className="max-w-7xl mx-auto">
+          <HostCalculator />
+        </div>
+      </section>
+
+      {/* 3. PROMESSA SECTION (O Paradoxo do Balcão) */}
+      <section className="py-20 md:py-28 px-4 relative overflow-hidden bg-gradient-to-b from-[#141414] to-[#0A0A0A] border-b border-gold/10" id="promessa">
+        {/* Decorative warm glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vinho/5 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <span className="text-xs font-sans-alt tracking-[0.4em] uppercase text-gold/80 block mb-3 font-semibold">Reflexão Estética</span>
+          
+          <h2 className="text-3.5xl md:text-5xl font-serif-display text-marfim-light font-medium tracking-tight mb-4">
+            O Paradoxo do Balcão
+          </h2>
+
+          <div className="flex justify-center mb-8">
+            <Ornamento width="w-24" />
+          </div>
+
+          <div className="space-y-6 text-base md:text-lg text-marfim/80 font-serif-body leading-relaxed text-justify max-w-2xl mx-auto mb-12">
+            <p>
+              Ao sentar-se em um balcão moderno de coquetelaria, você paga pela atmosfera, pela garrafa importada e pelo conhecimento técnico do bartender. Mas e quando você decide receber convidados em casa?
+            </p>
+            <p>
+              O que restava era a tentativa frustrada através de vídeos superficiais e receitas genéricas de internet, desprovidas de padronização, de medidas corretas de acidez e de respeito à diluição do gelo.
+            </p>
+            <p className="text-gold-light italic">
+              <strong>"O Livro dos Cem Drinks"</strong> rompe esse bloqueio. Ele traz o ensaio lírico, a história de cada ingrediente e fichas gráficas ultra-didáticas pensadas para quem exige excelência estética e degustativa no conforto do próprio lar.
+            </p>
+          </div>
+
+          <div className="border bg-gradient-to-tr from-[#141414] to-[#0A0A0A] border-gold/15 p-8 rounded-lg max-w-2xl mx-auto text-center relative overflow-hidden group hover:border-gold/30 transition-all duration-300 shadow-2xl">
+            {/* Thin gold internal margin */}
+            <div className="absolute inset-1.5 border border-gold/5 rounded pointer-events-none" />
+            <h3 className="text-xl md:text-2.5xl font-serif-display text-marfim-light leading-relaxed">
+              "Você já gastou o preço deste compêndio inteiro <span className="text-gold italic font-normal">em um único drink</span> em um sábado à noite."
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. APRESENTAÇÃO DE LUXO (O Livro dos Cem Drinks e Oferta Principal) */}
+      <section className="relative py-20 md:py-28 px-4 border-b border-gold/10 bg-[#0A0A0A]" id="hero-section">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Text Column */}
@@ -225,7 +277,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 2. PROOF STRIP (Ponto de Prova - 4 Números de Destaque) */}
+      {/* 5. PROOF STRIP (Ponto de Prova - 4 Números de Destaque) */}
       <section className="bg-[#141414] py-8 border-y border-gold/15" id="proof-strip">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center">
@@ -251,40 +303,6 @@ export default function App() {
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* 3. PROMESSA SECTION (Conexão Emocional) */}
-      <section className="py-20 md:py-28 px-4 relative overflow-hidden" id="promessa">
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <span className="text-xs font-sans-alt tracking-[0.4em] uppercase text-gold/80 block mb-3 font-semibold">O Paradoxo do Balcão</span>
-          
-          <h2 className="text-3xl md:text-4xl font-serif-display text-marfim-light font-medium tracking-tight mb-8">
-            Você já gastou o preço deste compêndio inteiro <span className="text-gold italic">em um único drink</span> em um sábado à noite.
-          </h2>
-          
-          <div className="flex justify-center mb-8">
-            <Ornamento width="w-24" />
-          </div>
-
-          <div className="space-y-6 text-base md:text-lg text-marfim/80 font-serif-body leading-relaxed text-justify max-w-2xl mx-auto">
-            <p>
-              Ao sentar-se em um balcão moderno de coquetelaria, você paga pela atmosfera, pela garrafa importada e pelo conhecimento técnico do bartender. Mas e quando você decide receber convidados em casa?
-            </p>
-            <p>
-              O que restava era a tentativa frustrada através de vídeos superficiais e receitas genéricas de internet, desprovidas de padronização, de medidas corretas de acidez e de respeito à diluição do gelo.
-            </p>
-            <p className="text-gold-light italic">
-              <strong>"O Livro dos Cem Drinks"</strong> rompe esse bloqueio. Ele traz o ensaio lírico, a história de cada ingrediente e fichas gráficas ultra-didáticas pensadas para quem exige excelência estética e degustativa no conforto do próprio lar.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERACTIVE DRINK CURATOR - INTERACTIVE QUIZ SECTION INCLUDED FOR LUXURY ENGAGEMENT */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-[#0A0A0A] to-[#141414] border-t border-gold/10">
-        <div className="max-w-7xl mx-auto">
-          <InteractiveQuiz onAdquirir={openCheckout} />
         </div>
       </section>
 
@@ -443,12 +461,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* HOST PARTY ESTIMATOR/CALCULATOR ATTACHED FOR ENGAGEMENT */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-t from-[#0A0A0A] to-[#141414] border-t border-gold/10">
-        <div className="max-w-7xl mx-auto">
-          <HostCalculator />
-        </div>
-      </section>
 
       {/* 6. AUTOR SECTION (FOTO DO AUTOR + BIOGRAFIA) */}
       <section className="py-20 md:py-28 px-4 border-t border-gold/10 bg-[#141414]/30 relative overflow-hidden" id="autor">
