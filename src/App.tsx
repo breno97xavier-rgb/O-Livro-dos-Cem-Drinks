@@ -27,8 +27,8 @@ import HostCalculator from "./components/HostCalculator";
 import BookPreview from "./components/BookPreview";
 import AcquaintanceTestimonials from "./components/AcquaintanceTestimonials";
 // Author and book assets
-const authorPhotoUrl = "https://i.ibb.co/Vp954Q1F/Chat-GPT-Image-31-de-mai-de-2026-00-18-06.png";
-const bookMockupUrl = "https://i.ibb.co/ksRcgH89/C-pia-de-Design-sem-nome.png";
+import authorPhotoUrl from "./assets/images/author_augusto_1780195897425.png";
+import bookMockupUrl from "./assets/images/book_mockup_1780195880321.png";
 
 export default function App() {
   // Frequently Asked Questions state
@@ -79,8 +79,7 @@ export default function App() {
 
   const openCheckout = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     e.preventDefault();
-    setShowCheckoutSimulator(true);
-    setCheckoutStatus("init");
+    window.location.assign(checkoutUrl);
   };
 
   const handleSimulatePayment = () => {
@@ -125,66 +124,14 @@ export default function App() {
               className="px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-[9px] sm:text-[10px] font-bold tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.03] active:scale-95 inline-flex items-center justify-center"
               id="cta-mini-nav"
             >
-              <span className="hidden sm:inline">Adquirir — </span>R$ 47
+              <span className="hidden sm:inline">Adquirir — </span>R$ 29,90
             </a>
           </div>
         </div>
       </header>
 
-      {/* 1. CURADORIA INTERATIVA (Quiz de descoberta da persona do anúncio) */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 border-b border-gold/10 bg-gradient-to-b from-[#0A0A0A] to-[#141414]" id="quiz-section">
-        <div className="max-w-7xl mx-auto">
-          <InteractiveQuiz onAdquirir={openCheckout} />
-        </div>
-      </section>
-
-      {/* 2. TÉCNICA & PRÁTICA PARA O ANFITRIÃO (Calculadora Inteligente) */}
-      <section className="py-20 md:py-24 px-4 bg-[#0A0A0A] border-b border-gold/10" id="calculadora-anfitriao">
-        <div className="max-w-7xl mx-auto">
-          <HostCalculator />
-        </div>
-      </section>
-
-      {/* 3. PROMESSA SECTION (O Paradoxo do Balcão) */}
-      <section className="py-20 md:py-28 px-4 relative overflow-hidden bg-gradient-to-b from-[#141414] to-[#0A0A0A] border-b border-gold/10" id="promessa">
-        {/* Decorative warm glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vinho/5 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <span className="text-xs font-sans-alt tracking-[0.4em] uppercase text-gold/80 block mb-3 font-semibold">Reflexão Estética</span>
-          
-          <h2 className="text-3.5xl md:text-5xl font-serif-display text-marfim-light font-medium tracking-tight mb-4">
-            O Paradoxo do Balcão
-          </h2>
-
-          <div className="flex justify-center mb-8">
-            <Ornamento width="w-24" />
-          </div>
-
-          <div className="space-y-6 text-base md:text-lg text-marfim/80 font-serif-body leading-relaxed text-justify max-w-2xl mx-auto mb-12">
-            <p>
-              Ao sentar-se em um balcão moderno de coquetelaria, você paga pela atmosfera, pela garrafa importada e pelo conhecimento técnico do bartender. Mas e quando você decide receber convidados em casa?
-            </p>
-            <p>
-              O que restava era a tentativa frustrada através de vídeos superficiais e receitas genéricas de internet, desprovidas de padronização, de medidas corretas de acidez e de respeito à diluição do gelo.
-            </p>
-            <p className="text-gold-light italic">
-              <strong>"O Livro dos Cem Drinks"</strong> rompe esse bloqueio. Ele traz o ensaio lírico, a história de cada ingrediente e fichas gráficas ultra-didáticas pensadas para quem exige excelência estética e degustativa no conforto do próprio lar.
-            </p>
-          </div>
-
-          <div className="border bg-gradient-to-tr from-[#141414] to-[#0A0A0A] border-gold/15 p-8 rounded-lg max-w-2xl mx-auto text-center relative overflow-hidden group hover:border-gold/30 transition-all duration-300 shadow-2xl">
-            {/* Thin gold internal margin */}
-            <div className="absolute inset-1.5 border border-gold/5 rounded pointer-events-none" />
-            <h3 className="text-xl md:text-2.5xl font-serif-display text-marfim-light leading-relaxed">
-              "Você já gastou o preço deste compêndio inteiro <span className="text-gold italic font-normal">em um único drink</span> em um sábado à noite."
-            </h3>
-          </div>
-        </div>
-      </section>
-
       {/* 4. APRESENTAÇÃO DE LUXO (O Livro dos Cem Drinks e Oferta Principal) */}
-      <section className="relative py-20 md:py-28 px-4 border-b border-gold/10 bg-[#0A0A0A]" id="hero-section">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 border-b border-gold/10 bg-[#0A0A0A]" id="hero-section">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Text Column */}
@@ -230,7 +177,7 @@ export default function App() {
                 className="w-full sm:w-auto px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.45)] hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2 text-center"
                 id="cta-hero-primary"
               >
-                Garantir Meu Livro — R$ 47
+                Garantir Meu Livro — R$ 29,90
                 <ArrowRight className="w-4 h-4 text-black shrink-0" />
               </a>
               <a
@@ -274,6 +221,44 @@ export default function App() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* 3. PROMESSA SECTION (O Paradoxo do Balcão) */}
+      <section className="py-20 md:py-28 px-4 relative overflow-hidden bg-gradient-to-b from-[#141414] to-[#0A0A0A] border-b border-gold/10" id="promessa">
+        {/* Decorative warm glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-vinho/5 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <span className="text-xs font-sans-alt tracking-[0.4em] uppercase text-gold/80 block mb-3 font-semibold">Reflexão Estética</span>
+          
+          <h2 className="text-3.5xl md:text-5xl font-serif-display text-marfim-light font-medium tracking-tight mb-4">
+            O Paradoxo do Balcão
+          </h2>
+
+          <div className="flex justify-center mb-8">
+            <Ornamento width="w-24" />
+          </div>
+
+          <div className="space-y-6 text-base md:text-lg text-marfim/80 font-serif-body leading-relaxed text-justify max-w-2xl mx-auto mb-12">
+            <p>
+              Ao sentar-se em um balcão moderno de coquetelaria, você paga pela atmosfera, pela garrafa importada e pelo conhecimento técnico do bartender. Mas e quando você decide receber convidados em casa?
+            </p>
+            <p>
+              O que restava era a tentativa frustrada através de vídeos superficiais e receitas genéricas de internet, desprovidas de padronização, de medidas corretas de acidez e de respeito à diluição do gelo.
+            </p>
+            <p className="text-gold-light italic">
+              <strong>"O Livro dos Cem Drinks"</strong> rompe esse bloqueio. Ele traz o ensaio lírico, a história de cada ingrediente e fichas gráficas ultra-didáticas pensadas para quem exige excelência estética e degustativa no conforto do próprio lar.
+            </p>
+          </div>
+
+          <div className="border bg-gradient-to-tr from-[#141414] to-[#0A0A0A] border-gold/15 p-8 rounded-lg max-w-2xl mx-auto text-center relative overflow-hidden group hover:border-gold/30 transition-all duration-300 shadow-2xl">
+            {/* Thin gold internal margin */}
+            <div className="absolute inset-1.5 border border-gold/5 rounded pointer-events-none" />
+            <h3 className="text-xl md:text-2.5xl font-serif-display text-marfim-light leading-relaxed">
+              "Você já gastou o preço deste compêndio inteiro <span className="text-gold italic font-normal">em um único drink</span> em um sábado à noite."
+            </h3>
+          </div>
         </div>
       </section>
 
@@ -598,7 +583,7 @@ export default function App() {
               {/* Price bracket cards */}
               <div className="flex items-baseline justify-center md:justify-start gap-4 mb-6">
                 <div className="text-sm text-marfim/40 line-through">R$ 97,00</div>
-                <div className="text-4xl md:text-5xl font-serif-display text-gold font-bold">R$ 47,00</div>
+                <div className="text-4xl md:text-5xl font-serif-display text-gold font-bold">R$ 29,90</div>
                 <div className="text-xs text-marfim/60 font-sans-alt uppercase tracking-widest pl-1">à vista</div>
               </div>
 
@@ -776,7 +761,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl font-serif-display text-marfim-light mb-2">Checkout Seguro Premium</h4>
                   <p className="text-xs text-marfim/60 font-serif-body px-2 mb-6">
-                    Você está iniciando a compra do e-book <strong>"O Livro dos Cem Drinks"</strong> por apenas R$ 47,00 (Preço Original R$ 97,00). Detalhes processados via canal criptografado.
+                    Você está iniciando a compra do e-book <strong>"O Livro dos Cem Drinks"</strong> por apenas R$ 29,90 (Preço anterior R$ 47,00). Detalhes processados via canal criptografado.
                   </p>
 
                   <div className="bg-black/60 border border-gold/15 p-4 rounded text-left mb-6">
@@ -784,7 +769,7 @@ export default function App() {
                     <span className="text-sm text-marfim font-serif-display font-bold">O Livro dos Cem Drinks</span>
                     <div className="flex justify-between items-center mt-3 pt-3 border-t border-gold/10 text-xs font-mono">
                       <span className="text-marfim/50">Total Seguro:</span>
-                      <span className="text-gold-light font-bold">R$ 47,00 à vista</span>
+                      <span className="text-gold-light font-bold">R$ 29,90 à vista</span>
                     </div>
                   </div>
 
@@ -814,7 +799,7 @@ export default function App() {
                   </div>
                   <h4 className="text-xl font-serif-display text-marfim-light mb-2">Compra Concluída!</h4>
                   <p className="text-xs text-marfim/70 font-serif-body px-4 mb-6">
-                    Seu pagamento fictício de <strong>R$ 47,00</strong> foi processado com absoluto sucesso no simulador.
+                    Seu pagamento fictício de <strong>R$ 29,90</strong> foi processado com absoluto sucesso no simulador.
                   </p>
                   
                   <div className="bg-emerald-500/5 border border-emerald-500/20 p-4 rounded text-xs text-emerald-300/80 mb-6 font-serif-body max-w-sm mx-auto leading-relaxed">
