@@ -124,7 +124,7 @@ export default function App() {
               className="px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-gold-dark to-gold text-black uppercase font-sans-alt text-[9px] sm:text-[10px] font-bold tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(184,146,74,0.3)] hover:scale-[1.03] active:scale-95 inline-flex items-center justify-center"
               id="cta-mini-nav"
             >
-              <span className="hidden sm:inline">Adquirir — </span>R$ 29,90
+              <span className="hidden sm:inline">Black Friday — </span>R$ 29,90
             </a>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function App() {
           <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
             <div className="inline-flex items-center justify-center lg:justify-start gap-2 mb-4">
               <span className="px-3 py-1 border border-gold/30 text-gold font-sans-alt text-[9px] tracking-[0.35em] uppercase rounded-full bg-gold/5 font-semibold">
-                Lançamento Oficial
+                Oferta de Black Friday
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-vinho" />
               <span className="text-xs font-sans-alt text-marfim/60 uppercase tracking-widest font-mono">Volume I</span>
@@ -177,7 +177,7 @@ export default function App() {
                 className="w-full sm:w-auto px-8 py-4.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-sans-alt text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_25px_rgba(184,146,74,0.45)] hover:scale-[1.02] cursor-pointer flex items-center justify-center gap-2 text-center"
                 id="cta-hero-primary"
               >
-                Garantir Meu Livro — R$ 29,90
+                Garantir Oferta Black Friday — R$ 29,90
                 <ArrowRight className="w-4 h-4 text-black shrink-0" />
               </a>
               <a
@@ -583,7 +583,7 @@ export default function App() {
               {/* Price bracket cards */}
               <div className="flex items-baseline justify-center md:justify-start gap-4 mb-6">
                 <div className="text-sm text-marfim/40 line-through">R$ 97,00</div>
-                <div className="text-4xl md:text-5xl font-serif-display text-gold font-bold">R$ 29,90</div>
+                <div className="text-xs uppercase tracking-widest text-gold mb-2">Oferta especial de Black Friday</div><div className="text-marfim/50 line-through text-lg">De R$ 47,00</div><div className="text-4xl md:text-5xl font-serif-display text-gold font-bold">R$ 29,90</div>
                 <div className="text-xs text-marfim/60 font-sans-alt uppercase tracking-widest pl-1">à vista</div>
               </div>
 
