@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     context: "Recebeu uma das primeiras cópias impressas de teste",
     avatarInitials: "SW",
     color: "from-amber-600/20 to-gold/10",
-    imageUrl: "https://i.ibb.co/0pzpXJR3/download-40.jpg"
+    imageUrl: "/assets/waldir.jpg"
   },
   {
     name: "Helena Prestes",
@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
     context: "Acompanhou as primeiras anotações em guardanapos há 15 anos",
     avatarInitials: "HP",
     color: "from-[#7a2426]/20 to-vinho/10",
-    imageUrl: "https://i.ibb.co/CK9zCj8w/download-41.jpg"
+    imageUrl: "/assets/helena.jpg"
   },
   {
     name: "Mestre Eduardo (Lalo)",
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     context: "Conversas regadas a rum e história caribenha",
     avatarInitials: "EL",
     color: "from-blue-900/20 to-slate-800/10",
-    imageUrl: "https://i.ibb.co/S79JV4Nj/Chat-GPT-Image-2-de-jun-de-2026-21-11-30.png"
+    imageUrl: "/assets/eduardo.jpg"
   },
   {
     name: "Clarice Menezes",
@@ -57,7 +57,7 @@ const testimonials: Testimonial[] = [
     context: "Sentou-se na cadeira nº 4 do balcão todas as quintas-feiras",
     avatarInitials: "CM",
     color: "from-emerald-950/20 to-teal-900/10",
-    imageUrl: "https://i.ibb.co/xtyfQbZ5/download-43.jpg"
+    imageUrl: "/assets/clarice.jpg"
   }
 ];
 
