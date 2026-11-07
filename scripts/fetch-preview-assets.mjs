@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 const files = [
  ['capa-original.png','https://at.adobe.com/QhmQBSuH3vsybqTA'],
+ ['mockup-fornecido.png','https://at.adobe.com/ykSUaLaBt7FxVYdM'],
  ['augusto-original.png','https://at.adobe.com/aAt9XPci1rkJdW5f'],
  ['clarice.jpg','https://at.adobe.com/67NrWoGIicDKD2ZG'],
  ['eduardo.jpg','https://at.adobe.com/YvQBTJRQ9bmZLIug'],
