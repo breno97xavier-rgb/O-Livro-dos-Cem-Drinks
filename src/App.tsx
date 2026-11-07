@@ -53,30 +53,6 @@ export default function App() {
     }
   }, []);
 
-  // Real-time limited offer countdown state
-  const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 14, seconds: 45 });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else {
-          // Reset to create soft recurring urgency
-          return { hours: 2, minutes: 59, seconds: 59 };
-        }
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Format countdown numbers
-  const padZero = (num: number) => num.toString().padStart(2, "0");
-
   const openCheckout = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     e.preventDefault();
     window.location.assign(checkoutUrl);
@@ -524,14 +500,6 @@ export default function App() {
               <Ornamento width="w-32" />
             </div>
             
-            {/* Real-time limited countdown block */}
-            <div className="inline-flex items-center gap-1.5 bg-vinho/10 border border-vinho/30 rounded px-4 py-1.5 text-xs text-vinho-light font-sans-alt uppercase tracking-widest mt-6">
-              <Clock className="w-3.5 h-3.5 text-gold animate-pulse" />
-              <span>O desconto de lançamento expira em: </span>
-              <span className="font-mono font-bold text-gold-light ml-1">
-                {padZero(timeLeft.hours)}:{padZero(timeLeft.minutes)}:{padZero(timeLeft.seconds)}
-              </span>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-[#141414] border border-gold/30 rounded-xl p-6 md:p-10 shadow-2xl relative">
@@ -582,8 +550,8 @@ export default function App() {
 
               {/* Price bracket cards */}
               <div className="flex items-baseline justify-center md:justify-start gap-4 mb-6">
-                <div className="text-sm text-marfim/40 line-through">R$ 97,00</div>
-                <div className="text-xs uppercase tracking-widest text-gold mb-2">Oferta especial de Black Friday</div><div className="text-marfim/50 line-through text-lg">De R$ 47,00</div><div className="text-4xl md:text-5xl font-serif-display text-gold font-bold">R$ 29,90</div>
+                
+                <div className="text-xs uppercase tracking-widest text-gold mb-2">Oferta especial de Black Friday</div><div className="text-marfim/50 line-through text-lg">De R$ 47,00</div><div className="text-4xl md:text-5xl font-sans-alt tabular-nums tracking-tight text-gold font-bold">R$ 29,90</div>
                 <div className="text-xs text-marfim/60 font-sans-alt uppercase tracking-widest pl-1">à vista</div>
               </div>
 
