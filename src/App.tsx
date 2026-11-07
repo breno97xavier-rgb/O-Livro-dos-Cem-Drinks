@@ -27,8 +27,8 @@ import HostCalculator from "./components/HostCalculator";
 import BookPreview from "./components/BookPreview";
 import AcquaintanceTestimonials from "./components/AcquaintanceTestimonials";
 // Author and book assets
-import authorPhotoUrl from "./assets/images/author_augusto_1780195897425.png";
-import bookMockupUrl from "./assets/images/book_mockup_1780195880321.png";
+const authorPhotoUrl = "/assets/augusto-original.png";
+const bookMockupUrl = "/assets/capa-original.png";
 
 export default function App() {
   // Frequently Asked Questions state
@@ -186,7 +186,7 @@ export default function App() {
                 src={bookMockupUrl}
                 alt="Mockup do Livro dos Cem Drinks"
                 referrerPolicy="no-referrer"
-                className="w-full max-w-[260px] xs:max-w-[300px] md:max-w-[340px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] hover:scale-105 transition-all duration-500 relative z-10"
+                className="w-full max-w-[260px] xs:max-w-[300px] md:max-w-[340px] shadow-[-10px_16px_30px_rgba(0,0,0,0.8)] hover:scale-[1.02] transition-all duration-500 relative z-10 [transform:perspective(900px)_rotateY(-13deg)] border-l-[9px] border-[#6b4d25]"
                 id="mockup-hero-img"
               />
               
@@ -512,7 +512,7 @@ export default function App() {
                   src={bookMockupUrl}
                   alt="Mockup do Livro dos Cem Drinks Oferta"
                   referrerPolicy="no-referrer"
-                  className="w-full max-w-[190px] md:max-w-[220px] drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)] hover:scale-105 transition-all duration-500 relative z-10"
+                  className="w-full max-w-[190px] md:max-w-[220px] shadow-[-8px_12px_24px_rgba(0,0,0,0.75)] hover:scale-105 transition-all duration-500 relative z-10 [transform:perspective(900px)_rotateY(-13deg)] border-l-[7px] border-[#6b4d25]"
                   id="mockup-offer-img"
                 />
                 
