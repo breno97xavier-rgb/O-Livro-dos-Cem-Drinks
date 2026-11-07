@@ -14,51 +14,11 @@ interface PageSample {
 }
 
 const samples: PageSample[] = [
-  {
-    id: "sumario",
-    title: "Sumário de Luxo",
-    subtitle: "Estrutura Geral",
-    imageUrl: "https://i.ibb.co/bjxtgY2r/amostra-sumario.png",
-    description: "Uma visão panorâmica da distribuição dos capítulos do livro. Organize sua busca e escolha os coquetéis por categorias estruturadas de destilados de forma extremamente limpa e com tipografia editorial marcante.",
-    badge: "Organização",
-    pageNumber: "06-07"
-  },
-  {
-    id: "abertura",
-    title: "Abertura de Capítulo",
-    subtitle: "Capítulo I — Gin",
-    imageUrl: "https://i.ibb.co/xq4MG7XT/amostra-abertura-gin.png",
-    description: "Cada capítulo se inicia com um mergulho literário no destilado da vez. Leia sobre as origens do Gin, as nuances botânicas dominantes e desfrute de crônicas raras que definem a essência de cada ingrediente.",
-    badge: "História & Cultura",
-    pageNumber: "40-41"
-  },
-  {
-    id: "receita",
-    title: "Ficha de Receita",
-    subtitle: "Negroni Clássico",
-    imageUrl: "https://i.ibb.co/5X56JhnG/amostra-receita-negroni.png",
-    description: "Proporções testadas à exaustão e expressas com total nitidez gráfica. Instruções passo a passo, copos recomendados, rituais de guarnição e a diluição perfeita para elevar sua técnica de balcão.",
-    badge: "Ficha Prática",
-    pageNumber: "42-43"
-  },
-  {
-    id: "dossie",
-    title: "Dossiê do Coquetel",
-    subtitle: "O Negroni por Inteiro",
-    imageUrl: "https://i.ibb.co/Hpn8D6Vv/amostra-dossie-negroni.png",
-    description: "Por que o Negroni é o drink mais equilibrado do mundo? Conheça os ensaios históricos e as lendas urbanas por trás da aristocracia italiana que inspiraram esta e mais de 100 receitas inclusas.",
-    badge: "Análise Lírica",
-    pageNumber: "44-45"
-  },
-  {
-    id: "aperol",
-    title: "Clássico Continental",
-    subtitle: "Aperol Spritz",
-    imageUrl: "https://i.ibb.co/GQ1Jdbh1/amostra-receita-aperol-spritz.png",
-    description: "O frescor absoluto traduzido em páginas duplas limpas e imersivas. Dicas de ouro de Augusto Valverde para preservar o gás das borbulhas e harmonizar as densidades dos licores naturalmente.",
-    badge: "Visual Premium",
-    pageNumber: "74-75"
-  },
+{id:"sumario",title:"Sumário",subtitle:"Organização da obra",imageUrl:"/assets/livro.pdf#page=4&toolbar=0&navpanes=0",description:"Veja a organização dos capítulos e os caminhos de leitura do compêndio.",badge:"Organização",pageNumber:"4"},
+{id:"fundamentos",title:"Fundamentos",subtitle:"A arte da coquetelaria",imageUrl:"/assets/livro.pdf#page=8&toolbar=0&navpanes=0",description:"Conheça a abordagem do livro sobre equilíbrio sensorial e preparo.",badge:"Fundamentos",pageNumber:"8"},
+{id:"aviation",title:"Aviation",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=22&toolbar=0&navpanes=0",description:"Ingredientes, medidas, técnica e apresentação na edição corrigida.",badge:"Receita",pageNumber:"22"},
+{id:"french75",title:"French 75",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=24&toolbar=0&navpanes=0",description:"Outra página real do livro com proporções e modo de preparo.",badge:"Receita",pageNumber:"24"},
+{id:"zombie",title:"Zombie",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=90&toolbar=0&navpanes=0",description:"Uma receita de múltiplos ingredientes para conhecer a profundidade do material.",badge:"Receita",pageNumber:"90"}
 ];
 
 interface BookPreviewProps {
@@ -103,7 +63,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
             Exclusividade Gráfica
           </span>
           <h2 className="text-3.5xl md:text-5xl font-serif-display text-marfim-light">
-            Vejas as Páginas por Dentro
+            Veja as Páginas por Dentro
           </h2>
           <div className="flex justify-center mt-4">
             <Ornamento width="w-32" />
@@ -245,12 +205,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
                     className="relative w-full h-full flex items-center justify-center"
                   >
                     {/* Page mockups drop shadow frame styling */}
-                    <img
-                      src={activeSample.imageUrl}
-                      alt={`Visualização da página ${activeSample.title} do Livro dos Cem Drinks`}
-                      referrerPolicy="no-referrer"
-                      className="max-w-full max-h-full object-contain rounded shadow-[0_15px_35px_rgba(0,0,0,0.95)] border border-white/5 transition-transform duration-700 hover:scale-[1.025]"
-                    />
+                    <iframe src={activeSample.imageUrl} title={`Página ${activeSample.pageNumber} do livro`} className="w-full h-full min-h-[450px] rounded border border-gold/10 bg-[#f6f0e5]" />
 
                     {/* Hover glass action button overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded">
