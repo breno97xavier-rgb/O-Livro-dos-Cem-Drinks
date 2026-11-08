@@ -8,7 +8,12 @@ const files = [
  ['eduardo.jpg','https://at.adobe.com/YvQBTJRQ9bmZLIug'],
  ['helena.jpg','https://at.adobe.com/IIqbUJaB6VQ4e25d'],
  ['waldir.jpg','https://at.adobe.com/7Vo5IpWLkvhS05YF'],
- ['livro.pdf','https://at.adobe.com/PIdELadZMawF1LHO']
+ ['livro.pdf','https://at.adobe.com/PIdELadZMawF1LHO'],
+ ['amostra_abertura_gin.png','https://at.adobe.com/Bscgx3GWwP3heJfZ'],
+ ['amostra_dossie_negroni.png','https://at.adobe.com/NO5pJH8QknzafvPY'],
+ ['amostra_receita_aperol_spritz.png','https://at.adobe.com/yRkzef5wGGp59Mad'],
+ ['amostra_receita_negroni.png','https://at.adobe.com/hqYsZvfAOtEcXCcU'],
+ ['amostra_sumario.png','https://at.adobe.com/gpIzOLBDGnTwvVRH']
 ];
 await fs.mkdir('public/assets', {recursive:true});
 for (const [name,url] of files) {
