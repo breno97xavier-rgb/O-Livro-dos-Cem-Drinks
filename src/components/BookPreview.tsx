@@ -14,11 +14,11 @@ interface PageSample {
 }
 
 const samples: PageSample[] = [
-{id:"sumario",title:"Sumário",subtitle:"Organização da obra",imageUrl:"/assets/livro.pdf#page=4&toolbar=0&navpanes=0",description:"Veja a organização dos capítulos e os caminhos de leitura do compêndio.",badge:"Organização",pageNumber:"4"},
-{id:"fundamentos",title:"Fundamentos",subtitle:"A arte da coquetelaria",imageUrl:"/assets/livro.pdf#page=8&toolbar=0&navpanes=0",description:"Conheça a abordagem do livro sobre equilíbrio sensorial e preparo.",badge:"Fundamentos",pageNumber:"8"},
-{id:"aviation",title:"Aviation",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=22&toolbar=0&navpanes=0",description:"Ingredientes, medidas, técnica e apresentação na edição corrigida.",badge:"Receita",pageNumber:"22"},
-{id:"french75",title:"French 75",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=24&toolbar=0&navpanes=0",description:"Outra página real do livro com proporções e modo de preparo.",badge:"Receita",pageNumber:"24"},
-{id:"zombie",title:"Zombie",subtitle:"Ficha de receita",imageUrl:"/assets/livro.pdf#page=90&toolbar=0&navpanes=0",description:"Uma receita de múltiplos ingredientes para conhecer a profundidade do material.",badge:"Receita",pageNumber:"90"}
+  { id: "sumario", title: "Sumário", subtitle: "Visão geral da obra", imageUrl: "/assets/amostra_sumario.png", description: "Conheça os oito capítulos, organizados por famílias de destilados, e os conteúdos de consulta que completam o livro.", badge: "Organização", pageNumber: "4" },
+  { id: "abertura-gin", title: "Abertura do capítulo Gin", subtitle: "Identidade visual dos capítulos", imageUrl: "/assets/amostra_abertura_gin.png", description: "Cada capítulo começa com uma abertura própria e apresenta os coquetéis que serão explorados ao longo da seção.", badge: "Capítulo", pageNumber: "9" },
+  { id: "receita-negroni", title: "Negroni", subtitle: "Receita ilustrada", imageUrl: "/assets/amostra_receita_negroni.png", description: "Uma ficha completa com ilustração do drink, ingredientes, medidas, modo de preparo e nota do bartender.", badge: "Receita", pageNumber: "10" },
+  { id: "dossie-negroni", title: "Dossiê do Negroni", subtitle: "História e referências", imageUrl: "/assets/amostra_dossie_negroni.png", description: "Além da receita, o livro aprofunda a história, o perfil sensorial, as curiosidades, as variações e as harmonizações.", badge: "Dossiê", pageNumber: "11" },
+  { id: "aperol-spritz", title: "Aperol Spritz", subtitle: "Outra receita ilustrada", imageUrl: "/assets/amostra_receita_aperol_spritz.png", description: "Veja outra ficha real do livro, com a apresentação visual do coquetel, proporções e instruções de preparo.", badge: "Receita", pageNumber: "191" }
 ];
 
 interface BookPreviewProps {
@@ -205,7 +205,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
                     className="relative w-full h-full flex items-center justify-center"
                   >
                     {/* Page mockups drop shadow frame styling */}
-                    <iframe src={activeSample.imageUrl} title={`Página ${activeSample.pageNumber} do livro`} className="w-full h-full min-h-[450px] rounded border border-gold/10 bg-[#f6f0e5]" />
+                    <img src={activeSample.imageUrl} alt={`Página ${activeSample.pageNumber}: ${activeSample.title}`} loading="lazy" className="w-full h-full object-contain rounded border border-gold/10" />
 
                     {/* Hover glass action button overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded">
@@ -280,7 +280,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
                 src={activeSample.imageUrl}
                 alt={activeSample.title}
                 referrerPolicy="no-referrer"
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-[0_0_50px_rgba(184,146,74,0.15)] border border-gold/20"
+                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-[0_0_50px_rgba(184,146,74,0.15)] border border-gold/20 cursor-zoom-in"
               />
 
               {/* Screen right arrow control */}
@@ -296,7 +296,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
             {/* Footer details inside lightbox */}
             <div className="w-full max-w-2xl bg-[#141414]/90 border border-gold/15 rounded-lg p-4 text-center mt-3 mb-2 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-xs text-marfim/70 font-serif-body text-left max-w-md">
-                Esta amostra ilustra o requinte editorial planejado em formato PDF de página dupla. Ideal para telas horizontais, tablets ou impressão de luxo.
+                Imagem real de uma página do livro. Use o zoom do navegador para examinar os detalhes da edição.
               </p>
               <a
                 href={checkoutUrl}
