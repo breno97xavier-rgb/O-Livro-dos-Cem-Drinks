@@ -28,6 +28,7 @@ interface BookPreviewProps {
 export default function BookPreview({ onAdquirir }: BookPreviewProps) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
+  const [isZoomed, setIsZoomed] = useState<boolean>(false);
   const [checkoutUrl, setCheckoutUrl] = useState("https://pay.wiapy.com/5nFt5iAoDz");
 
   useEffect(() => {
@@ -42,10 +43,12 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
   const activeSample = samples[currentIndex];
 
   const handleNext = () => {
+    setIsZoomed(false);
     setCurrentIndex((prev) => (prev + 1) % samples.length);
   };
 
   const handlePrev = () => {
+    setIsZoomed(false);
     setCurrentIndex((prev) => (prev - 1 + samples.length) % samples.length);
   };
 
@@ -252,7 +255,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
               </div>
 
               <button
-                onClick={() => setIsLightboxOpen(false)}
+                onClick={() => { setIsLightboxOpen(false); setIsZoomed(false); }}
                 className="p-2 border border-gold/20 hover:border-gold/60 text-gold-light hover:text-gold rounded transition-colors duration-200 uppercase font-sans-alt text-xs tracking-wider cursor-pointer"
               >
                 ✕ Fechar
@@ -260,7 +263,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
             </div>
 
             {/* Central focused image container */}
-            <div className="flex-1 w-full flex items-center justify-center p-3 relative max-h-[75vh]">
+            <div className={`flex-1 w-full flex items-center justify-center p-3 relative max-h-[75vh] ${isZoomed ? "overflow-auto" : "overflow-hidden"}`}>
               
               {/* Screen left arrow control */}
               <button
@@ -272,6 +275,8 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
               </button>
 
               <motion.img
+                onClick={() => setIsZoomed((prev) => !prev)}
+                title={isZoomed ? "Clique para reduzir" : "Clique para ampliar e arraste a rolagem"}
                 key={activeSample.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -280,7 +285,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
                 src={activeSample.imageUrl}
                 alt={activeSample.title}
                 referrerPolicy="no-referrer"
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-[0_0_50px_rgba(184,146,74,0.15)] border border-gold/20 cursor-zoom-in"
+                className={`rounded-lg shadow-[0_0_50px_rgba(184,146,74,0.15)] border border-gold/20 ${isZoomed ? "max-w-none max-h-none w-auto h-auto min-w-[900px] cursor-zoom-out" : "max-w-full max-h-[70vh] object-contain cursor-zoom-in"}`}
               />
 
               {/* Screen right arrow control */}
@@ -296,7 +301,7 @@ export default function BookPreview({ onAdquirir }: BookPreviewProps) {
             {/* Footer details inside lightbox */}
             <div className="w-full max-w-2xl bg-[#141414]/90 border border-gold/15 rounded-lg p-4 text-center mt-3 mb-2 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-xs text-marfim/70 font-serif-body text-left max-w-md">
-                Imagem real de uma página do livro. Use o zoom do navegador para examinar os detalhes da edição.
+                Imagem real de uma página do livro. Clique na imagem para ampliar; clique novamente para reduzir.
               </p>
               <a
                 href={checkoutUrl}
